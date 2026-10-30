@@ -1,8 +1,142 @@
 :root {
   --cor-fundo: #ffffff;
-  --cor-superficie: #bcc7d4;
+  --cor-superficie: #e6f4f6;
   --cor-texto: #233638;
-  --cor-principal: #39afbe;;
+  --cor-principal: #39afbe;
   --cor-perigo: #e01212;
+  --cor-borda: #b3dbcf;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+h1 {
+  text-align: center;
+  color: var(--cor-principal);
+}
+
+main {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: 2px solid var(--cor-principal);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  min-height: 2.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--cor-texto);
+  background-color: var(--cor-principal);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.erro {
+  color: var(--cor-perigo);
+  font-weight: bold;
+}
+
+.resultado {
+  text-align: center;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tarefa {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+}
+
+.numero {
+  font-weight: bold;
+}
+
+.texto {
+  flex: 1;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.excluir {
+  flex-shrink: 0;
+  margin-top: 0;
+  margin-left: 0.5rem;
+  color: var(--cor-fundo);
+  background-color: var(--cor-perigo);
+}
+
+@media (min-width: 48rem) {
+  .campo {
+    flex-direction: row;
+  }
+
+  input {
+    flex: 1;
+    width: auto;
+  }
+
+  button {
+    flex-shrink: 0;
+  }
+}
